@@ -67,79 +67,316 @@
     <div class="blurred-background"></div> <!-- Background Container -->
     
     <div class="movie-details">
-  <!-- Close Button -->
-  <button class="close-button" id="close-button">
-    <span class="close-text">CLOSE</span> &times;
-  </button>
+        <!-- Close Button (X) -->
+        <button class="close-button" id="close-button"><span class="close-text">CLOSE</span>
+    &times; 
+</button>
 
-  <!-- Layout: Poster + Description -->
-  <div class="movie-layout-row">
-    <!-- Poster -->
-    <div class="movie-poster-container">
-      <img id="movie-poster" alt="Movie Poster" class="movie-poster" src="images/placeholder.jpg">
-      <div class="button-container">
-        <button id="watch-now-btn" class="watch-now-btn"><b><h2>WATCH NOW!</h2></b></button>
-      </div>
-    </div>
-
-    <!-- Info & Description -->
-    <div class="movie-description-container">
-      <!-- ✅ Movie Title -->
-      <h1 id="movie-title" style="text-align:center; font-size: 2rem; margin-bottom: 10px;">Movie Title Placeholder</h1>
-
-      <!-- ✅ Storyline -->
-      <h2 style="text-align:center; margin-top: 20px;">Storyline</h2>
-      <p id="movie-description">This is the movie description.</p>
-
-      <!-- Genres and Metadata -->
-      <div class="movie-meta">
-        <div id="movie-genres" class="movie-genres"></div>
-        <div class="movie-info">
-          <div class="movie-rating" id="movie-rating"></div>
-          <div class="movie-release-date" id="movie-release-date">
-            <i class="fas fa-calendar-alt"></i>
-            <span id="release-date-text"></span>
-          </div>
-        </div>
-      </div>
+        <!-- Poster Container -->
+        <div class="movie-layout-row">
+  <div class="movie-poster-container">
+    <img id="movie-poster" alt="Movie Poster" class="movie-poster" src="images/https://zinemax.netlify.app">
+    <div class="button-container">
+      <button id="watch-now-btn" class="watch-now-btn"><b><h2>WATCH NOW!</h2></b></button>
     </div>
   </div>
 
-  <!-- ✅ Iframe container -->
-  <div id="iframe-container" style="display: block;">
-    <button id="close-iframe-btn">Close</button>
-    <button id="change-server-btn">Change Server</button>
-    <button onclick="toggleFullscreen()" class="fullscreen-btn">Fullscreen</button>
+  <div class="movie-description-container">
+    <h1 id="movie-title"></h1>
+    <p id="movie-description"></p>
 
-    <!-- Server Dropdown -->
-    <div id="server-dropdown" class="server-dropdown" style="display:none;">
-      <ul id="server-list"></ul>
-    </div>
+    <!-- Genre and Year -->
+    <div class="movie-meta">
+  <!-- Genre First -->
+  <div id="movie-genres" class="movie-genres"></div>
 
-    <!-- Movie Iframe -->
-    <iframe id="movie-iframe" width="100%" height="400" frameborder="0" allowfullscreen referrerpolicy="no-referrer" scrolling="no" sandbox="allow-scripts allow-presentation allow-same-origin"></iframe>
-  </div>
-
-  <!-- Floating Message -->
-  <div id="floating-message">
-    <i class="fa-solid fa-triangle-exclamation"></i>
-    <h2>Notice!</h2><br>
-    <h>
-      AD will open. Press Back to continue watching!<br><br>
-      If the video doesn't work,<br>
-      switch to another SERVER!<br><br>
-      If all servers are not working for that specific video, try our site version 2 with more servers:<br>
-      <a href="https://netplex-v2.pages.dev" target="_blank" style="color: #8A00C4; text-decoration: none;">https://netplex-v2.pages.dev</a>
-    </h>
-    <button onclick="window.location.href='https://netplex-v2.pages.dev'">V2</button><br>
-    <button onclick="closeMessage()">CLOSE</button>
-  </div>
 </div>
 
 
+            
+<!-- Iframe container (hidden by default) -->
+<div id="iframe-container" style="display:true;">
+    <button id="close-iframe-btn">Close</button>
+    <button id="change-server-btn">Change Server</button>
+    <button onclick="toggleFullscreen()" class="fullscreen-btn">Fullscreen</button>
+        <!-- Dropdown for changing server -->
+        <div id="server-dropdown" class="server-dropdown" style="display:none;">
+            <ul id="server-list">
+                <!-- Server options will be populated here -->
+            </ul>
+        </div>
+
+    
+<!-- Iframe For Movie Start -->    
+    <iframe id="movie-iframe" width="100%" height="400" frameborder="0"  allowfullscreen= "" referrerpolicy="no-referrer" scrolling="no" sandbox="allow-scripts allow-presentation allow-same-origin"></iframe> 
+  </div>
+<!-- Iframe For Movie End -->
+    
+
+        <!-- Genre Section -->
+        <div class="movie-genres" id="movie-genres"></div>
+
+        <div class="movie-info">
+            <div class="movie-rating" id="movie-rating"></div>
+            <div class="movie-release-date" id="movie-release-date">
+                <i class="fas fa-calendar-alt"></i> <!-- Calendar Icon -->
+                <span id="release-date-text"></span> <!-- The actual release date -->
+            </div>
+                    </div>        
+           
+
+<!-- Floating Message Start-->
+<div id="floating-message">
+    <i class="fa-solid fa-triangle-exclamation"></i>
+    <h2>Notice!</h2><br>
+    <h>
+        AD will open. Press Back to continue watching!<br><br>
+        If the video doesn't work,<br> 
+        switch to another SERVER!<br><br> 
+        If all servers are not working for that specific video, try our site version 2 with more servers:<br> 
+        <a href="https://netplex-v2.pages.dev" target="_blank" style="color: #8A00C4; text-decoration: none;">https://netplex-v2.pages.dev</a>
+    </h><button onclick="window.location.href='https://netplex-v2.pages.dev'">V2</button>
+    <br>
+    <button onclick="closeMessage()">CLOSE</button>
+    
+</div>
+<!-- Floating Message End-->
+
+</div> 
+
+
+<!-- Welcome Message Section -->
+  <div id="welcomeMessage">
+    Welcome to <b>NEXTPLAY</b>
+  </div>
+
+  <!-- Leave a Comment Section -->
+  <div id="leaveCommentMessage">
+    Please leave a comment below about the Movie/Tv Show.
+  </div>
+
+  <div id="commentForm">
+    <input type="text" id="username" placeholder="Enter Username">
+    <textarea id="commentText" placeholder="Write a comment..."></textarea>
+    
+    <div id="avatarSelection">
+      <p>Select your avatar:</p>
+      <div id="avatarContainer"></div>
+      <img id="avatarPreview" src="https://example.com/profile1.jpg" alt="Selected Avatar">
+    </div>
+
+    <button onclick="submitComment()">Post Comment</button>
+  </div>
+
+  <div id="commentsContainer"></div> 
+
+    
+<!-- LEAVE A COMMENT START -->
+<script type="module">
+    import { firebaseConfig } from "./firebase-config.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Array of profile picture URLs
+    const profilePictures = [
+      "https://avatar.iran.liara.run/public/1",
+      "https://avatar.iran.liara.run/public/2",
+      "https://avatar.iran.liara.run/public/3",
+      "https://avatar.iran.liara.run/public/37",
+      "https://avatar.iran.liara.run/public/45",
+      "https://avatar.iran.liara.run/public/38",
+      "https://avatar.iran.liara.run/public/24",
+      "https://avatar.iran.liara.run/public/73",
+      "https://avatar.iran.liara.run/public/56",
+      "https://avatar.iran.liara.run/public/58",
+      "https://avatar.iran.liara.run/public/77",
+      "https://avatar.iran.liara.run/public/95",
+      "https://avatar.iran.liara.run/public/68",
+      "https://avatar.iran.liara.run/public/90"
+    ];
+
+    let selectedAvatar = profilePictures[0]; // Default avatar
+
+    // Function to display available avatars
+    function displayAvatars() {
+      const avatarContainer = document.getElementById('avatarContainer');
+      avatarContainer.innerHTML = ""; // Clear existing avatars
+
+      profilePictures.forEach((url) => {
+        const avatarImg = document.createElement('img');
+        avatarImg.src = url;
+        avatarImg.alt = "Avatar";
+        avatarImg.classList.add('avatar');
+        
+        // Highlight the default selected avatar
+        if (url === selectedAvatar) {
+          avatarImg.classList.add('selected-avatar');
+        }
+
+        avatarImg.onclick = () => selectAvatar(url, avatarImg);
+        avatarContainer.appendChild(avatarImg);
+      });
+    }
+
+    // Function to select an avatar
+    function selectAvatar(avatar, selectedElement) {
+      selectedAvatar = avatar;
+      const avatarPreview = document.getElementById('avatarPreview');
+      avatarPreview.src = avatar; // Update the preview image
+
+      // Remove highlight from previous selection
+      document.querySelectorAll('.avatar').forEach(img => img.classList.remove('selected-avatar'));
+      selectedElement.classList.add('selected-avatar'); // Highlight new selection
+
+      // Hide "SELECTED AVATAR" text if it exists
+      const selectedText = document.getElementById("selectedAvatarText");
+      if (selectedText) {
+        selectedText.style.display = "none";
+      }
+    }
+
+    // Submit a new comment
+    async function submitComment() {
+  if (!movieId) {
+    console.error("Movie ID not found!");
+    return;
+  }
+
+  const username = document.getElementById('username').value.trim();
+  const commentText = document.getElementById('commentText').value.trim();
+
+  if (!username || !commentText) {
+    alert("Please enter your name and a comment.");
+    return;
+  }
+
+  const profilePicture = selectedAvatar; // Assuming you have selectedAvatar defined
+
+  try {
+    await addDoc(collection(db, "comments", movieId, "userComments"), {
+      text: commentText,
+      user: username,
+      timestamp: serverTimestamp(),
+      likeCount: 0,
+      profilePicture: profilePicture
+    });
+
+    console.log("Comment added successfully.");
+    document.getElementById('commentText').value = ''; // Clear input
+    getComments(); // Refresh comments
+  } catch (error) {
+    console.error("Error adding comment:", error);
+  }
+}
+
+
+    // Fetch and display comments
+    async function getComments() {
+  if (!movieId) {
+    console.error("Movie ID not found!");
+    return;
+  }
+
+  const commentsContainer = document.getElementById('commentsContainer');
+  commentsContainer.innerHTML = "<p>Loading comments...</p>";
+
+  try {
+    const q = query(collection(db, "comments", movieId, "userComments"), orderBy("timestamp", "desc"));
+    const querySnapshot = await getDocs(q);
+
+    commentsContainer.innerHTML = ""; // Clear previous comments
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const commentElement = document.createElement("div");
+      commentElement.classList.add("comment");
+      commentElement.innerHTML = `
+        <div class="commentHeader">
+          <img src="${data.profilePicture || 'https://example.com/default-profile.jpg'}" class="profilePicture">
+          <strong>${data.user}</strong>
+          <div class="timestamp">${data.timestamp ? new Date(data.timestamp.toDate()).toLocaleString() : "Just now"}</div>
+        </div>
+        <p>${data.text}</p>
+      `;
+
+      commentsContainer.appendChild(commentElement);
+    });
+
+  } catch (error) {
+    console.error("Error fetching comments:", error);
+    commentsContainer.innerHTML = "<p>Error loading comments.</p>";
+  }
+}
+
+
+    // Fetch comments and display avatars when the page loads
+    window.onload = () => {
+      getComments();
+      displayAvatars(); // Display available avatars on page load
+    };
+
+    // Expose functions to global scope
+    window.submitComment = submitComment;
+  </script>
+<!-- LEAVE A COMMENT END -->           
+
 
 <!-- Adsterra DL Ad Container Start -->
+<div class="ads-row">
+  <div class="responsive-iframe-container">
+    <iframe src="https://raptripeessentially.com/rft89532?key=c6c77823af757f93e17bbfa7ebad2639" 
+            width="100%" height="100%" style="border: none;" loading="lazy"></iframe>
+  </div>
+  <div class="responsive-iframe-container">
+    <iframe src="https://raptripeessentially.com/rft89532?key=c6c77823af757f93e17bbfa7ebad2639" 
+            width="100%" height="100%" style="border: none;" loading="lazy"></iframe>
+  </div>
+  <div class="responsive-iframe-container">
+    <iframe src="https://raptripeessentially.com/rft89532?key=c6c77823af757f93e17bbfa7ebad2639" 
+            width="100%" height="100%" style="border: none;" loading="lazy"></iframe>
+  </div>
+  <div class="responsive-iframe-container">
+    <iframe src="https://raptripeessentially.com/rft89532?key=c6c77823af757f93e17bbfa7ebad2639" 
+            width="100%" height="100%" style="border: none;" loading="lazy"></iframe>
+  </div>
+</div>
 
+<style>
+  .ads-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 1200px;
+  }
+
+  .responsive-iframe-container {
+    flex: 1 1 calc(25% - 20px); /* 4 items per row minus gap */
+    height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px; /* prevents cramping */
+  }
+
+  @media (max-width: 991px) {
+    .responsive-iframe-container {
+      flex: 1 1 calc(50% - 20px); /* 2 per row */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .responsive-iframe-container {
+      flex: 1 1 100%; /* full width */
+    }
+  }
+</style>
 <!-- Adsterra DL Ad Container End -->
 
 <!-- ONLINE STAT WIDGET CODE START --> 
