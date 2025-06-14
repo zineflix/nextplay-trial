@@ -66,66 +66,36 @@
 
     <div class="blurred-background"></div> <!-- Background Container -->
     
-    <div class="movie-details">
-        <!-- Close Button (X) -->
-        <button class="close-button" id="close-button"><span class="close-text">CLOSE</span>
-    &times; 
-</button>
-
-        <!-- Poster Container -->
-        <div class="movie-layout-row">
-  <div class="movie-poster-container">
-    <img id="movie-poster" alt="Movie Poster" class="movie-poster" src="images/https://zinemax.netlify.app">
-    <div class="button-container">
-      <button id="watch-now-btn" class="watch-now-btn"><b><h2>WATCH NOW!</h2></b></button>
-    </div>
+    <div class="movie-details-container">
+  <!-- Video Iframe at the top -->
+  <div id="iframe-container" class="iframe-container">
+    <iframe id="movie-iframe" allowfullscreen scrolling="no" sandbox="allow-scripts allow-presentation allow-same-origin"></iframe>
   </div>
 
-  <div class="movie-description-container">
-    <h1 id="movie-title"></h1>
-    <p id="movie-description"></p>
-
-    <!-- Genre and Year -->
-    <div class="movie-meta">
-  <!-- Genre First -->
-  <div id="movie-genres" class="movie-genres"></div>
-
-</div>
-
-
-            
-<!-- Iframe container (hidden by default) -->
-<div id="iframe-container" style="display:true;">
+  <!-- Server list -->
+  <div class="server-buttons">
     <button id="close-iframe-btn">Close</button>
     <button id="change-server-btn">Change Server</button>
     <button onclick="toggleFullscreen()" class="fullscreen-btn">Fullscreen</button>
-        <!-- Dropdown for changing server -->
-        <div id="server-dropdown" class="server-dropdown" style="display:none;">
-            <ul id="server-list">
-                <!-- Server options will be populated here -->
-            </ul>
-        </div>
-
-    
-<!-- Iframe For Movie Start -->    
-    <iframe id="movie-iframe" width="100%" height="400" frameborder="0"  allowfullscreen= "" referrerpolicy="no-referrer" scrolling="no" sandbox="allow-scripts allow-presentation allow-same-origin"></iframe> 
+    <div id="server-dropdown" class="server-dropdown">
+      <ul id="server-list">
+        <!-- Server items -->
+      </ul>
+    </div>
   </div>
-<!-- Iframe For Movie End -->
-    
 
-        <!-- Genre Section -->
-        <div class="movie-genres" id="movie-genres"></div>
-
-        <div class="movie-info">
-            <div class="movie-rating" id="movie-rating"></div>
-            <div class="movie-release-date" id="movie-release-date">
-                <i class="fas fa-calendar-alt"></i> <!-- Calendar Icon -->
-                <span id="release-date-text"></span> <!-- The actual release date -->
-            </div>
-                    </div>        
-</div> 
+  <!-- Poster + Title/Description -->
+  <div class="movie-info-section">
+    <div class="poster">
+      <img id="movie-poster" alt="Movie Poster">
+    </div>
+    <div class="details">
+      <h1 id="movie-title"></h1>
+      <p id="movie-description"></p>
+    </div>
+  </div>
 </div>
-</div>         
+         
 
 <!-- Floating Message Start-->
 <div id="floating-message">
