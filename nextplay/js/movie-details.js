@@ -524,5 +524,6 @@ function toggleFullscreen() {
 // Fullscreen Button Movie End //
 
 
-document.getElementById("movie-title").textContent = movieData.title;
-document.getElementById("movie-description").textContent = movieData.description;
+document.getElementById("movie-title").textContent = "Your Movie Title";
+document.getElementById("movie-description").textContent = "This is the movie description.";
+
