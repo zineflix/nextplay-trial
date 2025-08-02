@@ -30,7 +30,11 @@
     <!-- Google Adsense End -->
 
     <!-- PopAds Start -->
-   
+<script type="text/javascript" data-cfasync="false">
+/*<![CDATA[/* */
+(function(){var s=window,u="f166ead93811f1bbfcd3904ff7e19132",c=[["siteId",719*460+789*83+4813074],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],k=["d3d3LnByZW1pdW12ZXJ0aXNpbmcuY29tL3pyZXF1aXJlLm1pbi5jc3M=","ZDJqMDQyY2oxNDIxd2kuY2xvdWRmcm9udC5uZXQvV250VHVTL3ptdWx0aXBsZS5taW4uanM=","d3d3Lm9yZG5pd3ZteC5jb20vZ3JlcXVpcmUubWluLmNzcw==","d3d3LmNibHhtcGhvbnBtcHAuY29tL2dFL21tdWx0aXBsZS5taW4uanM="],d=-1,q,j,m=function(){clearTimeout(j);d++;if(k[d]&&!(1779342220000<(new Date).getTime()&&1<d)){q=s.document.createElement("script");q.type="text/javascript";q.async=!0;var b=s.document.getElementsByTagName("script")[0];q.src="https://"+atob(k[d]);q.crossOrigin="anonymous";q.onerror=m;q.onload=function(){clearTimeout(j);s[u.slice(0,16)+u.slice(0,16)]||m()};j=setTimeout(m,5E3);b.parentNode.insertBefore(q,b)}};if(!s[u]){try{Object.freeze(s[u]=c)}catch(e){}m()}})();
+/*]]>/* */
+</script>
     <!-- PopAds End -->
 
     <!-- Adsterra Start -->
@@ -72,24 +76,6 @@
     &times; 
 </button>
 
-<!-- Iframe container (hidden by default) -->
-<div id="iframe-container" style="display:block;">
-    <button id="close-iframe-btn">Close</button>
-    <button id="change-server-btn">Change Server</button>
-    <button onclick="toggleFullscreen()" class="fullscreen-btn">Fullscreen</button>
-        <!-- Dropdown for changing server -->
-        <div id="server-dropdown" class="server-dropdown" style="display:none;">
-            <ul id="server-list">
-                <!-- Server options will be populated here -->
-            </ul>
-        </div>
-
-    
-<!-- Iframe For Movie Start -->    
-    <iframe id="movie-iframe" width="100%" height="400" frameborder="0"  allowfullscreen= "" referrerpolicy="no-referrer" scrolling="no" sandbox="allow-scripts allow-presentation allow-same-origin"></iframe> 
-  </div>
-<!-- Iframe For Movie End -->
-        
         <!-- Poster Container -->
         <div class="movie-layout-row">
   <div class="movie-poster-container">
@@ -110,6 +96,26 @@
 
 </div>
 
+
+            
+<!-- Iframe container (hidden by default) -->
+<div id="iframe-container" style="display:true;">
+    <button id="close-iframe-btn">Close</button>
+    <button id="change-server-btn">Change Server</button>
+    <button onclick="toggleFullscreen()" class="fullscreen-btn">Fullscreen</button>
+        <!-- Dropdown for changing server -->
+        <div id="server-dropdown" class="server-dropdown" style="display:none;">
+            <ul id="server-list">
+                <!-- Server options will be populated here -->
+            </ul>
+        </div>
+
+    
+<!-- Iframe For Movie Start -->    
+    <iframe id="movie-iframe" width="100%" height="400" frameborder="0"  allowfullscreen= "" referrerpolicy="no-referrer" scrolling="no" sandbox="allow-scripts allow-presentation allow-same-origin"></iframe> 
+  </div>
+<!-- Iframe For Movie End -->
+    
 
         <!-- Genre Section -->
         <div class="movie-genres" id="movie-genres"></div>
@@ -142,11 +148,17 @@
 
 </div> 
 
+
+<!-- Welcome Message Section -->
+  <div id="welcomeMessage">
+    Welcome to <b>NEXTPLAY</b>
+  </div>
+
+               
+<!-- Adsterra DL 3 Ad Container Start -->
+
+<!-- Adsterra DL 3 Ad Container End -->
             
-<!-- Adsterra DL Ad Container Start -->
-
-<!-- Adsterra DL Ad Container End -->
-
 <!-- ONLINE STAT WIDGET CODE START --> 
 <!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
